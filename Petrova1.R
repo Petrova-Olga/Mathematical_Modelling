@@ -53,8 +53,8 @@ all_Samara_data_without0 = all_Samara_data_without0 %>% group_by(month)
 #Вычислим di для каждого месяца
 di = summarize(all_Samara_data, di = length(tavg[tavg>70])/length(tavg))[,-1]
 
-#Вычислим сумму температур больше 5 градусов в каждом месяце. Делим сумму на 3, т.к. у нас данные с 3х метеостанций
-St = summarize(all_Samara_data_without0, St = sum(tavg[tavg>50])/10/3)[,-1]
+#Вычислим сумму температур больше 5 градусов в каждом месяце. Делим сумму на 19, т.к. у нас данные с 19ти метеостанций
+St = summarize(all_Samara_data_without0, St = sum(tavg[tavg>50])/10/19)[,-1]
 
 #Найдем урожаность по формуле:
 Fi = ai + bi * 1.0 * St
