@@ -26,7 +26,7 @@ Samara_around=meteo_nearby_stations(lat_lon_df = Samara, station_data = station_
                                     limit = 19, var = c("PRCP", "TAVG"),
                                     year_min = 1990, year_max = 2005)
 for (i in 1:19) {
-Samara_id = Samara_around[["SAMARA"]][["id"]][1]
+Samara_id = Samara_around[["SAMARA"]][["id"]]
 all_Samara_data = meteo_tidy_ghcnd(stationid = Samara_id)
 all_Samara_data = bind_rows(Samara, all_Samara_data) 
 }
